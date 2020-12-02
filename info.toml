@@ -1,0 +1,16 @@
+[[lattices]]
+title = "5BA 20p Long Bend TGRB"
+file = "5bend_20p_LongBend-TG-TGRB.lte"
+author = "Bettina Kuske"
+description = """
+5bend MBA lattice, 20 Perioden, langer Dipol mit transversem Gradienten und Gradienten 
+im reverse bend, sprich versetzter Quadrupol
+"""
+
+[[lattices]]
+title = "5BA 20p Reference"
+file = "5bend_20p_reference.lte"
+author = "Bettina Kuske"
+description = """
+Referenzlösung (kleines alpha)
+"""
