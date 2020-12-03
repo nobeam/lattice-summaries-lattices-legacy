@@ -32,10 +32,10 @@ TODO: @michael
 
 ##### Dipole
 
- | attribute     | description |
- | ------------- | ----------- |
- | length      |  length |
- | angle      | deflection angle    |
- | k1 | geometric quadrupole strength   |
-  | e1      | entrance angle    |
-    | e2      |   exit angle  |
+ | attribute | description                   |
+ | --------- | ----------------------------- |
+ | length    | length                        |
+ | angle     | deflection angle              |
+ | k1        | geometric quadrupole strength |
+ | e1        | entrance angle                |
+ | e2        | exit angle                    |
