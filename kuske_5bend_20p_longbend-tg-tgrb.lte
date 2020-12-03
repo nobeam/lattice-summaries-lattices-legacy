@@ -47,17 +47,12 @@ s3   : ksext, l = 0.080000, k2 = -908.646612
 s4   : ksext, l = 0.080000, k2 = -505.892284
 s5   : ksext, l = 0.080000, k2 = 452.410482
 
-mbac : marker
-
-
 !----- table of segments ---------------------------------------------
 
-cell    : line=(mbac, b0, l1, s1, l1, b1, l3, s0)
-cell1   : line=(mbac, b0, l1, s1, l1, q1a, l2, b1, l3, s0a)
+cell    : line=(b0, l1, s1, l1, b1, l3, s0)
+cell1   : line=(b0, l1, s1, l1, q1a, l2, b1, l3, s0a)
 mbacell : line=(-cell, cell)
 mcell   : line=(mb0, ml3, mq1, ml2, s1a, ml2, mq2, ml1, ml0, s0a)
 mund    : line=(ul0, s3, ul0, uq1, ul1, uq2, ul2, s5, ul2, uq3, ul4)
 match   : line=(cell1, -mcell, mund)
 arc     : line=(-match, cell, mbacell, -cell, match)
-
-!..\examples\example-cells\lattices talk 2\5bend_20p_longbend-tg-tgrb.opa
