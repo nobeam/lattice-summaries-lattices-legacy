@@ -1,7 +1,8 @@
 [[lattices]]
 title = "5BA 20p Long Bend TGRB"
-file = "5bend_20p_LongBend-TG-TGRB.lte"
+name = "5bend_20p_LongBend-TG-TGRB"
 author = "Bettina Kuske"
+energy = 2500
 description = """
 5bend MBA lattice, 20 Perioden, langer Dipol mit transversem Gradienten und Gradienten 
 im reverse bend, sprich versetzter Quadrupol
@@ -9,8 +10,25 @@ im reverse bend, sprich versetzter Quadrupol
 
 [[lattices]]
 title = "5BA 20p Reference"
-file = "5bend_20p_reference.lte"
+name = "5bend_20p_reference"
 author = "Bettina Kuske"
+energy = 2500
 description = """
 Referenzlösung (kleines alpha)
+"""
+
+[[lattices]]
+title = "Hwang 4 Sexts"
+name = "Hwang_5sexts"
+author = "Ji-Gwang Hwang"
+energy = 2500
+description = """
+"""
+
+[[lattices]]
+title = "Hwang 5 Sexts"
+name = "Hwang_5sexts"
+author = "Ji-Gwang Hwang"
+energy = 2500
+description = """
 """
