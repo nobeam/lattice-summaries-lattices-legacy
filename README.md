@@ -32,8 +32,10 @@ TODO: @michael
 
 ##### Dipole
 
- | Tables        | Are         |
+ | attribute     | description |
  | ------------- | ----------- |
- | col 3 is      | right-align |
- | col 2 is      | centered    |
- | zebra stripes | are neat    |
+ | length      |  length |
+ | angle      | deflection angle    |
+ | k1 | geometric quadrupole strength   |
+  | e1      | entrance angle    |
+    | e2      |   exit angle  |
