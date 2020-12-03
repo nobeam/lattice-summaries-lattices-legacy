@@ -30,7 +30,7 @@ Agree on a restricted form of lattice file format, which only uses a set of basi
 
 TODO: @michael
 
-##### Dipole
+#### Dipole
 
  | attribute | description                   |
  | --------- | ----------------------------- |
