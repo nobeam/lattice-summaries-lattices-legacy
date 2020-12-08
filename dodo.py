@@ -1,9 +1,11 @@
 from pathlib import Path
+from operator import itemgetter
 import tomlkit
 import latticejson
 
 base_dir = Path(__file__).parent
 lattice_dir = Path("originals")
+generated_dir = base_dir / "generated"
 info = tomlkit.parse((base_dir / "info.toml").read_text())
 
 
@@ -13,14 +15,15 @@ def task_convert():
         for target in targets:
             latticejson.save(lattice_file, target)
 
-    for source in lattice_dir.rglob("*"):
-        if source.is_dir():
-            continue
-
+    for lattice in info["lattices"]:
+        namespace, name = itemgetter("namespace", "name")(lattice)
+        source_base = lattice_dir / namespace / name
+        source = next(source_base.parent.glob(str(source_base.stem) + ".*"))
+        target_base = generated_dir / namespace / name
         targets = [
-            "_generated" / source.with_suffix(".lte").relative_to(lattice_dir),
-            "_generated" / source.with_suffix(".madx").relative_to(lattice_dir),
-            "_generated" / source.with_suffix(".json").relative_to(lattice_dir),
+            target_base.with_suffix(".json"),
+            target_base.with_suffix(".lte"),
+            target_base.with_suffix(".madx"),
         ]
         targets[0].parent.mkdir(parents=True, exist_ok=True)
 
