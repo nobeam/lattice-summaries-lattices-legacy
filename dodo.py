@@ -1,18 +1,11 @@
 DOIT_CONFIG = {"default_tasks": ["convert"]}
 
-# map source file to dependencies
-SOURCE = {
-    "main": ["defs.h"],
-    "kbd": ["defs.h", "command.h"],
-    "command": ["defs.h", "command.h"],
-}
-
 from pathlib import Path
 import tomlkit
 import latticejson
 
 base_dir = Path(__file__).parent
-lattice_dir = Path("lattices")
+lattice_dir = Path("originals")
 info = tomlkit.parse((base_dir / "info.toml").read_text())
 
 

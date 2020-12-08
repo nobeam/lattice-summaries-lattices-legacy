@@ -11,3 +11,12 @@ description = """
 A description of the lattice.
 """
 ```
+
+## Generated Lattices
+
+The generated lattices are stored in the generated folder. Generate the lattices in the different formats by running:
+
+```
+doit
+```
+
