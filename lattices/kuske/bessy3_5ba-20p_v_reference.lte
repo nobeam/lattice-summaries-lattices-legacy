@@ -15,15 +15,15 @@ ul3 : drift, l = 0.100000
 ul4 : drift, l = 2.500000
 o1l : drift, l = 0.040000
 
-q0  : quadrupole, l = 0.090000, k1 = -11.102108
-q1  : quadrupole, l = 0.140000, k1 = 11.052113
-q1a : quadrupole, l = 0.120000, k1 = 11.335714
-mq0 : quadrupole, l = 0.100000, k1 = 0.000000
-mq1 : quadrupole, l = 0.130000, k1 = -11.304641
-mq2 : quadrupole, l = 0.160000, k1 = 11.684475
-uq1 : quadrupole, l = 0.090000, k1 = -9.208116
-uq2 : quadrupole, l = 0.240000, k1 = 11.669158
-uq3 : quadrupole, l = 0.090000, k1 = -11.061242
+q0  : kquad, l = 0.090000, k1 = -11.102108
+q1  : kquad, l = 0.140000, k1 = 11.052113
+q1a : kquad, l = 0.120000, k1 = 11.335714
+mq0 : kquad, l = 0.100000, k1 = 0.000000
+mq1 : kquad, l = 0.130000, k1 = -11.304641
+mq2 : kquad, l = 0.160000, k1 = 11.684475
+uq1 : kquad, l = 0.090000, k1 = -9.208116
+uq2 : kquad, l = 0.240000, k1 = 11.669158
+uq3 : kquad, l = 0.090000, k1 = -11.061242
 
 b0  : csbend, l = 0.230000, angle = 0.041713, e1 = 0.000000, e2 = 0.041713
 b1  : csbend, l = 0.050000, angle = -0.003578, e1 = -0.001789, e2 = -0.001789
@@ -41,10 +41,11 @@ s5  : ksext, l = 0.080000, k2 = 1007.912528
 
 !----- table of segments ---------------------------------------------
 
-cell    : line=(b0, l0, q0, l1, s1, l1, q1, l2, b1, l3, s0)
-cell1   : line=(b0, l0, q0, l1, s1, l1, q1a, l2, b1, l3, s0a)
-mbacell : line=(-cell, cell)
-mcell   : line=(mb0, ml3, mq1, ml2, s1a, ml2, mq2, ml1, ml0, s0a)
-mund    : line=(ul0, s3, ul0, uq1, ul1, uq2, ul2, s5, ul2, uq3, ul4)
-match   : line=(cell1, -mcell, mund)
-arc     : line=(-match, cell, mbacell, -cell, match)
+cell_inner  : line=(b0, l0, q0, l1, s1, l1, q1, l2, b1, l3, s0)
+cell1       : line=(b0, l0, q0, l1, s1, l1, q1a, l2, b1, l3, s0a)
+mbacell     : line=(-cell_inner, cell_inner)
+mcell       : line=(mb0, ml3, mq1, ml2, s1a, ml2, mq2, ml1, ml0, s0a)
+mund        : line=(ul0, s3, ul0, uq1, ul1, uq2, ul2, s5, ul2, uq3, ul4)
+match       : line=(cell1, -mcell, mund)
+cell        : line=(-match, cell_inner, mbacell, -cell_inner, match)
+ring        : line=(20 * cell)
