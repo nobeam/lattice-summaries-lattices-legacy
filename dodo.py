@@ -1,5 +1,3 @@
-DOIT_CONFIG = {"default_tasks": ["convert"]}
-
 from pathlib import Path
 import tomlkit
 import latticejson
