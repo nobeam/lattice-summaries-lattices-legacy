@@ -14,7 +14,7 @@ Referenzlösung (kleines alpha)
 title = "BESSY 3 Design Kuske 5BA 20p Long Bend TGRB"
 authors = ["Bettina Kuske"]
 namespace = "kuske"
-name = "b3_5ba-20p_v_long-bend-tgrb"
+name = "bessy3_5ba-20p_v_long-bend-tgrb"
 energy = 2500
 simulations = ["elegant"]
 labels = ["antibends", "combined function bends"]
