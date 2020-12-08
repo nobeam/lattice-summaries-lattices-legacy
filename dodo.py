@@ -18,6 +18,7 @@ def task_convert():
     for lattice in info["lattices"]:
         namespace, name = itemgetter("namespace", "name")(lattice)
         source_base = lattice_dir / namespace / name
+        # TODO: is there a better way?
         source = next(source_base.parent.glob(str(source_base.stem) + ".*"))
         target_base = generated_dir / namespace / name
         targets = [
