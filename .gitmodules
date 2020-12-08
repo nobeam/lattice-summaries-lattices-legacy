@@ -1,4 +1,4 @@
-[submodule "_generated"]
-	path = generated
+[submodule "generated"]
+	path = generated 
 	url = git@github.com:nobeam/lattice-summaries-lattices.git
 	branch = generated
