@@ -6,6 +6,7 @@ machine = "bessy3"
 name = "bessy3_5ba-20p_v_reference"
 energy = 2500
 simulations = ["elegant", "madx", "apace"]
+labels = []
 description = """
 Referenzlösung (kleines alpha)
 """
@@ -14,7 +15,7 @@ Referenzlösung (kleines alpha)
 title = "BESSY 3 Design Kuske 5BA 20p Long Bend TGRB"
 authors = ["Bettina Kuske"]
 namespace = "kuske"
-name = "b3_5ba-20p_v_long-bend-tgrb"
+name = "bessy3_5ba-20p_v_long-bend-tgrb"
 energy = 2500
 simulations = ["elegant"]
 labels = ["antibends", "combined function bends"]
@@ -48,10 +49,11 @@ description = """
 [[lattices]]
 title = "BESSY II Standard User 2019"
 authors = ["HZB"]
-namespace = "andreas"
+namespace = "hzb"
 name = "bessy2_stduser-2019-05-07-v_1"
 energy = 1700
 simulations = ["apace"]
+labels = []
 description = """
 Standard User lattice of the BESSY II storage ring
 (Here as reference and to test stuff!)
@@ -60,11 +62,12 @@ Standard User lattice of the BESSY II storage ring
 
 [[lattices]]
 title = "BESSY II Design Lattice 1996"
-author = ["HZB"]
-namespace = "andreas"
+authors = ["HZB"]
+namespace = "hzb"
 name = "bessy2_design-1996_v_1"
 energy = 1700
 simulations = ["apace"]
+labels = []
 description = """
 Fully symmetric Design Lattice of the BESSY II storage ring
 (Here as reference and to test stuff!)
