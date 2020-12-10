@@ -42,10 +42,10 @@ s5  : ksext, l = 0.080000, k2 = 1007.912528
 !----- table of segments ---------------------------------------------
 
 cell_inner  : line=(b0, l0, q0, l1, s1, l1, q1, l2, b1, l3, s0)
+mbacell     : line=(2 * (cell_inner, -cell_inner))
 cell1       : line=(b0, l0, q0, l1, s1, l1, q1a, l2, b1, l3, s0a)
-mbacell     : line=(-cell_inner, cell_inner)
 mcell       : line=(mb0, ml3, mq1, ml2, s1a, ml2, mq2, ml1, ml0, s0a)
 mund        : line=(ul0, s3, ul0, uq1, ul1, uq2, ul2, s5, ul2, uq3, ul4)
 match       : line=(cell1, -mcell, mund)
-cell        : line=(-match, cell_inner, mbacell, -cell_inner, match)
+cell        : line=(-match, mbacell, match)
 ring        : line=(20 * cell)
