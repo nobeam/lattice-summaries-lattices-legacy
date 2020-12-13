@@ -1,21 +1,22 @@
 [[lattices]]
-title = "BESSY 3 Design Kuske 5BA 20p Reference"
-authors = ["Bettina Kuske"]
 namespace = "kuske"
-machine = "bessy3"
 name = "bessy3_5ba-20p_v_reference"
+title = "BESSY 3 Design Kuske 5BA 20p Reference"
+machine = "bessy3"
+authors = ["Bettina Kuske"]
 energy = 2500
-simulations = ["elegant", "madx", "apace"]
+simulations = ["apace", "elegant", "madx"]
 labels = []
 description = """
 Referenzlösung (kleines alpha)
 """
 
 [[lattices]]
-title = "BESSY 3 Design Kuske 5BA 20p Long Bend TGRB"
-authors = ["Bettina Kuske"]
 namespace = "kuske"
 name = "bessy3_5ba-20p_v_long-bend-tgrb"
+machine = "bessy3"
+title = "BESSY 3 Design Kuske 5BA 20p Long Bend TGRB"
+authors = ["Bettina Kuske"]
 energy = 2500
 simulations = ["elegant"]
 labels = ["antibends", "combined function bends"]
@@ -25,10 +26,11 @@ im reverse bend, sprich versetzter Quadrupol
 """
 
 [[lattices]]
-title = "BESSY 3 Design Hwang 4 Sexts"
-authors = ["Ji-Gwang Hwang"]
 namespace = "hwang"
 name = "bessy3_4sexts_v_1"
+machine = "bessy3"
+title = "BESSY 3 Design Hwang 4 Sexts"
+authors = ["Ji-Gwang Hwang"]
 energy = 2500
 labels = ["combined function bends"]
 simulations = ["elegant", "madx"]
@@ -36,10 +38,11 @@ description = """
 """
 
 [[lattices]]
-title = "BESSY 3 Design Hwang 5 Sexts"
-authors = ["Ji-Gwang Hwang"]
 namespace = "hwang"
 name = "bessy3_5sexts_v_1"
+machine = "bessy3"
+title = "BESSY 3 Design Hwang 5 Sexts"
+authors = ["Ji-Gwang Hwang"]
 energy = 2500
 simulations = ["elegant", "madx"]
 labels = ["combined function bends"]
@@ -47,10 +50,11 @@ description = """
 """
 
 [[lattices]]
-title = "BESSY II Standard User 2019"
-authors = ["HZB"]
 namespace = "hzb"
 name = "bessy2_stduser-2019-05-07-v_1"
+machine = "bessy2"
+title = "BESSY II Standard User 2019"
+authors = ["HZB"]
 energy = 1700
 simulations = ["apace"]
 labels = []
@@ -61,10 +65,11 @@ Standard User lattice of the BESSY II storage ring
 
 
 [[lattices]]
-title = "BESSY II Design Lattice 1996"
-authors = ["HZB"]
 namespace = "hzb"
 name = "bessy2_design-1996_v_1"
+machine = "bessy2"
+title = "BESSY II Design Lattice 1996"
+authors = ["HZB"]
 energy = 1700
 simulations = ["apace"]
 labels = []

@@ -34,9 +34,9 @@
         "strtdrh": ["dl", "s4d", "dq", "q4d", "ds3", "s3d", "dq", "q3d", "db"],
         "strttlh": ["db", "q3t", "dq", "s3t", "ds3", "q4t", "dq", "s4t", "dq", "q5t", "dk"],
         "strttrh": ["dk", "q5t", "dq", "s4t", "dq", "q4t", "ds3", "s3t", "dq", "q3t", "db"],
-        "d": ["achrh", "b", "strtdlh", "strtdrh", "b", "achlh"],
-        "t": ["achrh", "b", "strttlh", "strttrh", "b", "achlh"],
-        "cell": ["d", "t"],
+        "doublet": ["achrh", "b", "strtdlh", "strtdrh", "b", "achlh"],
+        "triplet": ["achrh", "b", "strttlh", "strttrh", "b", "achlh"],
+        "cell": ["doublet", "triplet"],
         "ring": ["cell", "cell", "cell", "cell", "cell", "cell", "cell", "cell"]
     }
 }
