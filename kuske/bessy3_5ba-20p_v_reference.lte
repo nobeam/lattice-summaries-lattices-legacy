@@ -1,0 +1,49 @@
+! TITLE: 
+l0: drif, l=0.1
+l1: drif, l=0.1
+l2: drif, l=0.1
+l3: drif, l=0.1
+ml0: drif, l=0.05
+ml1: drif, l=0.05
+ml2: drif, l=0.1
+ml3: drif, l=0.1
+ul0: drif, l=0.1
+ul1: drif, l=0.1
+ul2: drif, l=0.1
+ul3: drif, l=0.1
+ul4: drif, l=2.5
+o1l: drif, l=0.04
+q0: kquad, l=0.09, k1=-11.102108
+q1: kquad, l=0.14, k1=11.052113
+q1a: kquad, l=0.12, k1=11.335714
+mq0: kquad, l=0.1, k1=0.0
+mq1: kquad, l=0.13, k1=-11.304641
+mq2: kquad, l=0.16, k1=11.684475
+uq1: kquad, l=0.09, k1=-9.208116
+uq2: kquad, l=0.24, k1=11.669158
+uq3: kquad, l=0.09, k1=-11.061242
+b0: csbend, l=0.23, angle=0.041713, e1=0.0, e2=0.041713
+b1: csbend, l=0.05, angle=-0.003578, e1=-0.001789, e2=-0.001789
+mb0: csbend, l=0.23, angle=0.042673, e1=0.021337, e2=0.021337
+mb1: csbend, l=0.05, angle=0.0, e1=0.0, e2=0.0
+s0: ksext, l=0.06, k2=1443.469812
+s0a: ksext, l=0.04, k2=1565.26659
+s1: ksext, l=0.08, k2=-1524.4949
+s1a: ksext, l=0.08, k2=-175.156788
+s3: ksext, l=0.08, k2=-815.82314
+s4: ksext, l=0.08, k2=-505.892284
+s5: ksext, l=0.08, k2=1007.912528
+mund_reversed: LINE=(ul4, uq3, ul2, s5, ul2, uq2, ul1, uq1, ul0, s3, ul0)
+mcell: LINE=(mb0, ml3, mq1, ml2, s1a, ml2, mq2, ml1, ml0, s0a)
+cell1_reversed: LINE=(s0a, l3, b1, l2, q1a, l1, s1, l1, q0, l0, b0)
+match_reversed: LINE=(mund_reversed, mcell, cell1_reversed)
+cell_inner: LINE=(b0, l0, q0, l1, s1, l1, q1, l2, b1, l3, s0)
+cell_inner_reversed: LINE=(s0, l3, b1, l2, q1, l1, s1, l1, q0, l0, b0)
+mbacell: LINE=(cell_inner, cell_inner_reversed, cell_inner, cell_inner_reversed)
+cell1: LINE=(b0, l0, q0, l1, s1, l1, q1a, l2, b1, l3, s0a)
+mcell_reversed: LINE=(s0a, ml0, ml1, mq2, ml2, s1a, ml2, mq1, ml3, mb0)
+mund: LINE=(ul0, s3, ul0, uq1, ul1, uq2, ul2, s5, ul2, uq3, ul4)
+match: LINE=(cell1, mcell_reversed, mund)
+cell: LINE=(match_reversed, mbacell, match)
+ring: LINE=(cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell, cell)
+USE, ring

@@ -1,0 +1,35 @@
+! TITLE: BESSY II - Design Lattice
+q1: kquad, l=0.25, k1=2.4519
+q2: kquad, l=0.2, k1=-1.89757
+q3d: kquad, l=0.25, k1=-2.020250494966872
+q4d: kquad, l=0.5, k1=1.408159470450006
+q3t: kquad, l=0.25, k1=-2.46319
+q4t: kquad, l=0.5, k1=2.62081
+q5t: kquad, l=0.2, k1=-2.6
+s1: ksext, l=0.105, k2=49.35808097165103
+s2: ksext, l=0.16, k2=-41.52033512035799
+s3d: ksext, l=0.16, k2=-46.66222668520843
+s4d: ksext, l=0.16, k2=26.97788440561498
+s3t: ksext, l=0.16, k2=-59.15244659713909
+s4t: ksext, l=0.16, k2=85.76518842267137
+dq1: drif, l=0.288
+ds1: drif, l=0.16
+dq2: drif, l=0.42
+ds2: drif, l=0.307
+db: drif, l=0.42
+ds3: drif, l=0.153
+dq: drif, l=0.153
+dl: drif, l=2.806
+dk: drif, l=2.453
+b: csbend, l=0.855, angle=0.196349540849362, e1=0.09817477042, e2=0.09817477042
+achrh: LINE=(s1, ds1, q1, dq1, s2, ds2, q2, dq2)
+strtdlh: LINE=(db, q3d, dq, s3d, ds3, q4d, dq, s4d, dl)
+strtdrh: LINE=(dl, s4d, dq, q4d, ds3, s3d, dq, q3d, db)
+achlh: LINE=(dq2, q2, ds2, s2, dq1, q1, ds1, s1)
+doublet: LINE=(achrh, b, strtdlh, strtdrh, b, achlh)
+strttlh: LINE=(db, q3t, dq, s3t, ds3, q4t, dq, s4t, dq, q5t, dk)
+strttrh: LINE=(dk, q5t, dq, s4t, dq, q4t, ds3, s3t, dq, q3t, db)
+triplet: LINE=(achrh, b, strttlh, strttrh, b, achlh)
+cell: LINE=(doublet, triplet)
+ring: LINE=(cell, cell, cell, cell, cell, cell, cell, cell)
+USE, ring
