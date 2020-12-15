@@ -2,7 +2,7 @@
 
 This repository is used to manage the lattices shown on the [lattice-summaries website](https://lattice-summaries.netlify.app/). Every time a new lattice file is pushed to this repository, it automatically gets converted into serval lattice file formats. The resulting lattice files are stored on the `generated` branch. The orignal lattice file is stored in the `originals` folder on the `main` branch.
 
-## Convert and publish lattice files
+## Convert and publish lattice files (maintainers only)
 
 The lattices are converted using the [LatticeJSON package](https://github.com/nobeam/latticejson). To convert all lattice files into the different formats run: *(requires Python 3.8+ and [Poetry](https://python-poetry.org/))*
 
@@ -91,7 +91,7 @@ As we want to distribute the lattices over the web we have restrict us to the [u
 
  The schema of a lattice name is given by:
 
-<pre><code><b>&ltnamespace&gt</b>/<b>&ltmachine&gt</b>_<b>&ltfamiliy&gt</b>_v_<b>&ltversion&gt</b></pre></code>
+<pre><code><b>&ltnamespace&gt</b> / <b>&ltmachine&gt</b>_<b>&ltfamiliy&gt</b>_v_<b>&ltversion&gt</b></pre></code>
 
 A name is built up out of different `<identifiers>` which are separated by a `_`. Allowed characters within an `<identifier>` are therefore `A-Za-z0-9.~-`. 
 
@@ -99,7 +99,7 @@ A name is built up out of different `<identifiers>` which are separated by a `_`
 
 ### Explanation of different `<identifiers>`
 
-- **`<namespace>`** This is necessary to make sure different people don't come up with the same name. All contributors of lattice-summaries repo will have their own namespace and have to make sure that all **`<family>`** names are unique within their namespace. Notice that the **`<namespace>`** must not correspond to the author(s) of a lattice. The actual authors of a lattice are listed in `info.toml` file and also as comment at the top of automatically generated lattice files. I decided it this way, because we may want to include lattices from other facilities. If Paul would upload the SLS2 lattice, the name would be something like `goslawski/sls2_design_v_std-user` even though Paul is not the author of the SLS2 lattice. The same would be true for a LOCO-measured BESSY II lattice file. In case a lattice **`<family>`** is maintained by multiple people an acronym like `gaa` for `Goslawski`, `Abo-Bakr` and `Andreas` would also be fine.
+- **`<namespace>`** is a subfolder make sure different people don't come up with the same name. All contributors of lattice-summaries repo will have their own namespace and have to make sure that all **`<family>`** names are unique within their namespace. Notice that the **`<namespace>`** can be different from the author(s) of a lattice. The actual author(s) of a lattice are listed in [`info.toml`](#infotoml) file and are also included as comment at the top of automatically generated lattice files. I decided it this way, because we may want to include lattices from other facilities. If Paul would upload the SLS2 lattice, the name would be something like `goslawski / sls2_design_v_std-user` even though Paul is not the author of the SLS2 lattice. The same would be true for a LOCO-measured BESSY II lattice file. In case a lattice **`<family>`** is maintained by multiple people an acronym like `gaa` for `Goslawski`, `Abo-Bakr` and `Andreas` would also be fine.
 - **`<machine>`** Name of the machine (e.g. `bessy2`, `bessy3`, `mls`, `mls2`)
 - **`<familiy>`** The goal of a **`<family>`** identifier is to make different versions of a lattice easier to compare on the lattice-summaries website. The name of the lattice *family* must be unique within *YOUR* **`<namespace>`**. Lattices within a family should belong logically together. For example Paul created several MLS2 lattices based on a scaled down version of BESSY II. In this case the family name should be something like `scaled-bessy2`. As during the B3 development presumably many lattices will be called `5ba-20p`, you could also choose a more memorable name like `jupiter`, `bravo` or `falcon`, which will make it easy to refer to a specific lattice during discussions.
 - **`<version>`** The version name uniquely identifies a lattice within a **`<family>`**. It can be a simple number like `1` or `2` or a more descriptive name like `std-user`, `low-alpha` or `reference`. To please Paul it is also possible to use something like `1200mev-8p-2ba-new-wp-x909125-y909125`.
