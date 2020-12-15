@@ -1,6 +1,6 @@
-# B3 Prototype Lattices
+# Lattice Summaries - lattice files
 
-The the lattices files of the [lattice-summaries website](https://lattice-summaries.netlify.app/) are managed via this GitHub repository. Every time a new lattice file is pushed to this repository, it automatically gets converted into serval lattice file formats. These generated lattice files are stored on the `generated` branch. The orignal lattice files are stored in the `originals` folder on the `main` branch.
+This repository is used to manage the lattices shown on the [lattice-summaries website](https://lattice-summaries.netlify.app/). Every time a new lattice file is pushed to this repository, it automatically gets converted into serval lattice file formats. The resulting lattice files are stored on the `generated` branch. The orignal lattice file is stored in the `originals` folder on the `main` branch.
 
 ## Convert and publish lattice files
 
@@ -11,22 +11,25 @@ poetry install
 poetry run doit
 ```
 
-The resulting lattices files are saved to the `generated` folder and can be published by pushing the `generated` folder to the `generated` branch.
+The resulting lattices files are saved to the `generated` folder and can be published by pushing this folder to the `generated` branch.
 
 ## Add a new Lattice
 
 1. Clone this repository
 2. Create a new branch (e.g. `goslawski/add-mls2-lattice`)
-3. Check if your lattice file meets all the requirements. [(see below)](#lattice-file-format) 
-4. Add your lattice file to the `originals` folder.
+3. Check if your lattice file meets all the requirements. [(see lattice file requirements)](#lattice-file-requirements) 
+4. Add your lattice file to the `originals/<namespace>` folder. [(see naming scheme)](#naming-scheme)
 5. Add an entry in the `info.toml` file. [(see below)](#infotoml)
 6. Push the branch and create a [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
-7. The pull request should be squash merged. The commit message should be `add goslawski/mls2_scaled-from-bessy2_v_1` for a newly added lattice or `update goslawski/mls2_scaled-from-bessy2_v_1` in case a lattice is updated.
+7. The pull request should be squash merged. The commit summary should be `add goslawski/mls2_scaled-from-bessy2_v_1` for a newly added lattice and `update goslawski/mls2_scaled-from-bessy2_v_1` in case a lattice file is updated.
 
 ### info.toml
 
-The lattices are listed in the `info.toml` file. If you add an lattice to this repo please add an entry to this file: 
+Meta information on the lattices is listed in the `info.toml` file. If you add an lattice to this repo don't forget to add an entry to this file: 
+
 ```toml
+# example entry
+
 [[lattices]]
 namespace = "goslawski"
 name = "mls2_scaled-from-bessy2_v_1"
@@ -41,22 +44,22 @@ A possible design lattice for the MLS2 based on a scaled down version of BESSY 2
 """
 ```
 
-> :memo: TODO @michael: add list of useful labels
+Most of the attributes should be self-explanatory. A list of available labels is listed below:
 
+> :memo: TODO@michael: add list of useful labels
 
-## Lattice file format
+## Lattice file requirements
 ### Problem
 
-To leverage multiple simulation tools we have to generate lattice files in different formats. These lattice file formats can have custom elements and attributes which makes a 1:1 mapping between them impossible.
+To leverage multiple simulation tools we have to convert lattice files into different formats. These lattice file formats can have custom elements and attributes which makes a 1:1 mapping between them impossible.
 
 ### Solution
 
-We agree on a restricted set of generic elements, which should be available in every simulation software and define a 1:1 mapping between these lattice file formats.
+We agree on a restricted set of generic elements, which should be available in every simulation software and define a 1:1 mapping between these generic elements and the different lattice file formats.
 
-### Allowed lattice file formats
+### List of generic elements and 1:1 mapping
 
-
-> :memo: TODO @michael:
+> :memo: TODO@michael:
 >    - add tables of allowed elements and attributes
 >    - i have added an examplary table for the Dipole element. we need a separate table for each element!
 
