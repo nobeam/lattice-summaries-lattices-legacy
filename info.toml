@@ -56,7 +56,7 @@ machine = "bessy2"
 title = "BESSY II Standard User 2019"
 authors = ["HZB"]
 energy = 1700
-simulations = ["apace"]
+simulations = ["apace", "elegant", "madx"]
 labels = []
 description = """
 Standard User lattice of the BESSY II storage ring
@@ -71,7 +71,7 @@ machine = "bessy2"
 title = "BESSY II Design Lattice 1996"
 authors = ["HZB"]
 energy = 1700
-simulations = ["apace"]
+simulations = ["apace", "elegant", "madx"]
 labels = []
 description = """
 Fully symmetric Design Lattice of the BESSY II storage ring
