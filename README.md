@@ -1,10 +1,10 @@
 # B3 Prototype Lattices
 
-The orignal lattice files are stored in the `originals` folder.  The automattically converted lattices are stored in the `generated` folder and can be pushed to the `generated` branch.
+The orignal lattice files are stored in the `originals` folder. The automattically converted lattices are saved in the `generated` folder and are pushed to the `generated` branch.
 
 ## Convert Lattices
 
-The lattices are converted using the [LatticeJSON cli](https://github.com/nobeam/latticejson). To convert all lattice files into the different formats run: (requires Python 3.8+ and [Poetry](https://python-poetry.org/))
+The lattices are converted using the [LatticeJSON package](https://github.com/nobeam/latticejson). To convert all lattice files into the different formats run: *(requires Python 3.8+ and [Poetry](https://python-poetry.org/))*
 
 ```
 poetry install
@@ -41,7 +41,7 @@ A possible design lattice for the MLS2 based on a scaled down version of BESSY 2
 """
 ```
 
-TODO @michael: add list of useful labels 
+> :memo: TODO @michael: add list of useful labels
 
 
 ## Lattice file format
@@ -56,9 +56,9 @@ We agree on a restricted set of generic elements, which should be available in e
 ### Allowed lattice file formats
 
 
-TODO @michael: 
-    - add tables of allowed elements and attributes
-    - i have added an examplary table for the Dipole element. we need a separate table for each element!
+> :memo: TODO @michael:
+>    - add tables of allowed elements and attributes
+>    - i have added an examplary table for the Dipole element. we need a separate table for each element!
 
 | Generic Element | MAD-X      | elegant |
 | --------------- | ---------- | ------- |
@@ -80,7 +80,9 @@ TODO @michael:
 
 ## Naming Scheme
 
-Information like the energy, periodicity, number of bends per cell and other details (e.g. longitudinal gradients bend) which characterize a lattice will be included in the `info.toml` file, so it is not necessary that they are present in the filename. As we want to distribute the lattices over the web we have restrict us to the [unreserved URL characters `A-Za-z0-9.~-_`](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_in_a_URI).
+Information like the energy, periodicity, number of bends per cell and other details (e.g. longitudinal gradients bend) which characterize a lattice will be included in the `info.toml` file, so it is not necessary that they are present in the filename.
+
+As we want to distribute the lattices over the web we have restrict us to the [unreserved URL characters `A-Za-z0-9.~-_`](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_in_a_URI).
 
 ### Schema
 
@@ -103,7 +105,7 @@ A name is built up out of different `<identifiers>` which are separated by a `_`
 
 Even there are no technical limitation, I would recommend to stick with lowercase characters and avoid using the `~` and `.` characters. This will make it easier on the command line and also provides some consistency. There recommended character to use are therefore `a-z0-9-`.
 
-### Examples
+### Example Names
 
 * `kuske/bessy3_5ba-20p_v_reference`
 * `kuske/bessy3_5ba-20p_v_long-bend-tgrb`
