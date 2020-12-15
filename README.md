@@ -25,7 +25,7 @@ The resulting lattices files are saved to the `generated` folder and can be publ
 
 ### info.toml
 
-Meta information on the lattices is listed in the `info.toml` file. If you add an lattice to this repo don't forget to add an entry to this file: 
+Meta information on the lattices is listed in the `info.toml` file. If you add a new lattice to this repo don't forget to add an entry to this file: 
 
 ```toml
 # example entry
@@ -51,17 +51,13 @@ Most of the attributes should be self-explanatory. A list of available labels is
 ## Lattice file requirements
 ### Problem
 
-To leverage multiple simulation tools we have to convert lattice files into different formats. These lattice file formats can have custom elements and attributes which makes a 1:1 mapping between them impossible.
+To leverage multiple simulation tools we have to convert lattice files into different formats. As these lattice file formats can contain tool-specific elements/attributes (and somethings are turing-complete scripting languages), a 1:1 translation between all lattice file formats is not always possible.
 
 ### Solution
 
-We agree on a restricted set of generic elements, which should be available in every simulation software and define a 1:1 mapping between these generic elements and the different lattice file formats.
+We agree on a restricted set of generic elements, which should be available in every simulation software and define a 1:1 mapping between these generic elements and the different lattice file formats. We should also avoid simulation-specific attributes (e.g. `nkicks`), which should be included in the run files. Control-flow like `if` statements or `for` loops are also not allowed. Only basic variable assigned and basic sequence manipulation (Reflection and Repetition) is permissiable. An detailed specification of allowed elements can be found below.
 
 ### List of generic elements and 1:1 mapping
-
-> :memo: TODO@michael:
->    - add tables of allowed elements and attributes
->    - i have added an examplary table for the Dipole element. we need a separate table for each element!
 
 | Generic Element | MAD-X      | elegant |
 | --------------- | ---------- | ------- |
@@ -80,6 +76,10 @@ We agree on a restricted set of generic elements, which should be available in e
 | k1        | geometric quadrupole strength |
 | e1        | entrance angle                |
 | e2        | exit angle                    |
+
+> :memo: TODO@michael:
+>    - add tables of allowed elements and attributes
+>    - i have added an examplary table for the Dipole element. we need a separate table for each element!
 
 ## Naming Scheme
 
