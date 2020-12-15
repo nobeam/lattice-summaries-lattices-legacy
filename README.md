@@ -21,7 +21,7 @@ The resulting lattices files are saved to the `generated` folder and can be publ
 4. Add your lattice file to the `originals/<namespace>` folder. [(see naming scheme)](#naming-scheme)
 5. Add an entry in the `info.toml` file. [(see below)](#infotoml)
 6. Commit your changes to your new branch.
-    - The commit summary should be `add goslawski/mls2_<family>_v_<version>` for a newly added lattice 
+    - The commit summary should be `add goslawski/mls2_<family>_v_<version>` for a newly added lattice.
     - The commit summary should be `update goslawski/mls2_<family>_v_<version>` in case a lattice file is updated.
 7. Push your branch and create a [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
     - All pull request must be reviewed by someone else before merged.
@@ -55,31 +55,32 @@ Most of the attributes should be self-explanatory. A list of available labels is
 ## Lattice file requirements
 ### Problem
 
-To leverage multiple simulation tools we have to convert lattice files into different formats. As these lattice file formats can contain tool-specific elements/attributes (and somethings are turing-complete scripting languages), a 1:1 translation between all lattice file formats is not always possible.
+To leverage multiple simulation tools we have to convert lattice files into different formats. As these lattice file formats can contain tool-specific elements/attributes (and somethings are turing-complete scripting languages), a 1:1 translation between the different lattice file formats is not always possible.
 
 ### Solution
 
-We agree on a restricted set of generic elements, which should be available in every simulation software and define a 1:1 mapping between these generic elements and the different lattice file formats. We should also avoid simulation-specific attributes (e.g. `nkicks`), which should be included in the run files. Control-flow like `if` statements or `for` loops are also not allowed. Only basic variable assigned and basic sequence manipulation (Reflection and Repetition) is permissiable. An detailed specification of allowed elements can be found below.
+We agree on a restricted set of generic elements, which should be available in every simulation software and define a 1:1 mapping between these generic elements and the different lattice file formats. We should also avoid simulation-specific attributes (e.g. `nkicks`), which should be included in the run files. Control-flow like `if` statements or `for` loops are also not allowed. Only basic variable assigned and basic sequence manipulation (reflection and repetition) is permissiable. A detailed specification of allowed elements/attributes can be found below.
 
 ### List of generic elements and 1:1 mapping
 
 | Generic Element | MAD-X      | elegant |
 | --------------- | ---------- | ------- |
-| Drift           | DRIFT      | DRIF    |
-| Dipole          | SBEND      | CSBEND  |
-| Quadrupole      | QUADRUPOLE | KQUAD   |
-| Sextupole       | SEXTUPOLE  | KSEXT   |
-| Octupole        | Octupole   | KOCT    |
+| Drift           | drift      | drif    |
+| Dipole          | sbend      | csbend  |
+| Quadrupole      | quadrupole | kquad   |
+| Sextupole       | sextupole  | ksext   |
+| Octupole        | octupole   | koct    |
+| Cavity          | rfcavity   | rfca    |
 
 #### Dipole
 
-| attribute | description                   |
-| --------- | ----------------------------- |
-| length    | length                        |
-| angle     | deflection angle              |
-| k1        | geometric quadrupole strength |
-| e1        | entrance angle                |
-| e2        | exit angle                    |
+| Generic Attribute | MAD-X | elegant | description                   |
+| ----------------- | ----- | ------- | ----------------------------- |
+| length            | l     | l       | length                        |
+| angle             | angle | angle   | deflection angle              |
+| e1                | e1    | e1      | entrance angle                |
+| e2                | e2    | e2      | exit angle                    |
+| k1                | k1    | k1      | geometric quadrupole strength |
 
 > :memo: TODO@michael:
 >    - add tables of allowed elements and attributes
@@ -93,7 +94,7 @@ As we want to distribute the lattices over the web we have restrict us to the [u
 
 ### Schema
 
- The schema of a lattice name is given by:
+The naming schema of a lattice file is given by:
 
 <pre><code><b>&ltnamespace&gt</b> / <b>&ltmachine&gt</b>_<b>&ltfamiliy&gt</b>_v_<b>&ltversion&gt</b></pre></code>
 
