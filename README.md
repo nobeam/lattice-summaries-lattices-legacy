@@ -1,8 +1,8 @@
 # B3 Prototype Lattices
 
-The orignal lattice files are stored in the `originals` folder. The automattically converted lattices are saved in the `generated` folder and are pushed to the `generated` branch.
+The the lattices files of the [lattice-summaries website](https://lattice-summaries.netlify.app/) are managed via this GitHub repository. Every time a new lattice file is pushed to this repository, it automatically gets converted into serval lattice file formats. These generated lattice files are stored on the `generated` branch. The orignal lattice files are stored in the `originals` folder on the `main` branch.
 
-## Convert Lattices
+## Convert and publish lattice files
 
 The lattices are converted using the [LatticeJSON package](https://github.com/nobeam/latticejson). To convert all lattice files into the different formats run: *(requires Python 3.8+ and [Poetry](https://python-poetry.org/))*
 
@@ -11,21 +11,21 @@ poetry install
 poetry run doit
 ```
 
-## Add a new Lattice
+The resulting lattices files are saved to the `generated` folder and can be published by pushing the `generated` folder to the `generated` branch.
 
-The `originals` folder has several subfolders which are used as namespaces to prevent naming collisions. To add a new lattice:
+## Add a new Lattice
 
 1. Clone this repository
 2. Create a new branch (e.g. `goslawski/add-mls2-lattice`)
 3. Check if your lattice file meets all the requirements. [(see below)](#lattice-file-format) 
 4. Add your lattice file to the `originals` folder.
-5. Add an entry in the `info.toml` file.
-6. Push the branch and create a pull request.
-7. The pull request should be squash merged. The commit message should be "add goslawski/mls2_scaled-from-bessy2_v_1" for a newly added lattice or "update goslawski/mls2_scaled-from-bessy2_v_1" in case a lattice is updated.
+5. Add an entry in the `info.toml` file. [(see below)](#infotoml)
+6. Push the branch and create a [pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+7. The pull request should be squash merged. The commit message should be `add goslawski/mls2_scaled-from-bessy2_v_1` for a newly added lattice or `update goslawski/mls2_scaled-from-bessy2_v_1` in case a lattice is updated.
 
+### info.toml
 
-The lattices are listed in the `info.toml` file. If you add an lattice to this repo please add an entry to this file:
-
+The lattices are listed in the `info.toml` file. If you add an lattice to this repo please add an entry to this file: 
 ```toml
 [[lattices]]
 namespace = "goslawski"
