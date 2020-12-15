@@ -6,8 +6,9 @@ authors = ["Felix Andreas <felix.andreas95@googlemail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-LatticeJSON = { path = "../../latticejson/", develop = true }
 # LatticeJSON = "^0.1.4"
+# LatticeJSON = { git = "https://github.com/nobeam/latticejson.git", branch = "master" }
+LatticeJSON = { path = "../../latticejson/", develop = true }
 tomlkit = "^0.7.0"
 doit = "^0.33.1"
 
