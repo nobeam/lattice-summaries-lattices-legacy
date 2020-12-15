@@ -90,7 +90,7 @@ We agree on a restricted set of generic elements, which should be available in e
 
 Information like the energy, periodicity, number of bends per cell and other details (e.g. longitudinal gradients bend) which characterize a lattice will be included in the `info.toml` file, so it is not necessary that they are present in the filename.
 
-As we want to distribute the lattices over the web we have restrict us to the [unreserved URL characters `A-Za-z0-9.~-_`](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_in_a_URI).
+As we want to distribute the lattice files over the web we have restrict us to the [unreserved URL characters `A-Za-z0-9.~-_`](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_in_a_URI).
 
 ### Schema
 
@@ -113,7 +113,7 @@ A name is built up out of different `<identifiers>` which are separated by a `_`
 
 Even there are no technical limitation, I would recommend to stick with lowercase characters and avoid using the `~` and `.` characters. This will make it easier on the command line and also provides some consistency. There recommended character to use are therefore `a-z0-9-`.
 
-### Example Names
+### Example names
 
 * `kuske/bessy3_5ba-20p_v_reference`
 * `kuske/bessy3_5ba-20p_v_long-bend-tgrb`
