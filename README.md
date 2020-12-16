@@ -74,13 +74,13 @@ We agree on a restricted set of generic elements, which should be available in e
 
 #### Dipole
 
-| Generic Attribute | MAD-X | elegant | elegant | TRACY | description                   |
-| ----------------- | ----- | ------- | ------- | ----- | ----------------------------- |
-| length            | l     | l       |         |       | length                        |
-| angle             | angle | angle   |         |       | deflection angle              |
-| e1                | e1    | e1      |         |       | entrance angle                |
-| e2                | e2    | e2      |         |       | exit angle                    |
-| k1                | k1    | k1      |         |       | geometric quadrupole strength |
+| Generic Attribute | MAD-X | elegant | elegant | TRACY | OPA | description                   |
+| ----------------- | ----- | ------- | ------- | ----- | --- | ----------------------------- |
+| length            | l     | l       |         |       |     | length                        |
+| angle             | angle | angle   |         |       |     | deflection angle              |
+| e1                | e1    | e1      |         |       |     | entrance angle                |
+| e2                | e2    | e2      |         |       |     | exit angle                    |
+| k1                | k1    | k1      |         |       |     | geometric quadrupole strength |
 
 ### List of generic elements and 1:1 mapping
 
