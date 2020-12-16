@@ -63,28 +63,68 @@ We agree on a restricted set of generic elements, which should be available in e
 
 ### List of generic elements and 1:1 mapping
 
-| Generic Element | MAD-X      | elegant |
-| --------------- | ---------- | ------- |
-| Drift           | drift      | drif    |
-| Dipole          | sbend      | csbend  |
-| Quadrupole      | quadrupole | kquad   |
-| Sextupole       | sextupole  | ksext   |
-| Octupole        | octupole   | koct    |
-| Cavity          | rfcavity   | rfca    |
+| Generic Element | MAD-X      | elegant | TRACY | OPA |
+| --------------- | ---------- | ------- | ----- | --- |
+| Drift           | drift      | drif    |       |     |
+| Dipole          | sbend      | csbend  |       |     |
+| Quadrupole      | quadrupole | kquad   |       |     |
+| Sextupole       | sextupole  | ksext   |       |     |
+| Octupole        | octupole   | koct    |       |     |
+| Cavity          | rfcavity   | rfca    |       |     |
 
 #### Dipole
 
-| Generic Attribute | MAD-X | elegant | description                   |
-| ----------------- | ----- | ------- | ----------------------------- |
-| length            | l     | l       | length                        |
-| angle             | angle | angle   | deflection angle              |
-| e1                | e1    | e1      | entrance angle                |
-| e2                | e2    | e2      | exit angle                    |
-| k1                | k1    | k1      | geometric quadrupole strength |
+| Generic Attribute | MAD-X | elegant | elegant | TRACY | OPA | description                   |
+| ----------------- | ----- | ------- | ------- | ----- | --- | ----------------------------- |
+| length            | l     | l       |         |       |     | length                        |
+| angle             | angle | angle   |         |       |     | deflection angle              |
+| e1                | e1    | e1      |         |       |     | entrance angle                |
+| e2                | e2    | e2      |         |       |     | exit angle                    |
+| k1                | k1    | k1      |         |       |     | geometric quadrupole strength |
 
-> :memo: TODO@michael:
->    - add tables of allowed elements and attributes
->    - i have added an examplary table for the Dipole element. we need a separate table for each element!
+### List of generic elements and 1:1 mapping
+
+| Generic Element | MAD-X      | elegant | TRACY | OPA |
+| --------------- | ---------- | ------- | ----- | --- |
+| Drift           | drift      | drif    |       |     |
+| Dipole          | sbend      | csbend  |       |     |
+| Quadrupole      | quadrupole | kquad   |       |     |
+| Sextupole       | sextupole  | ksext   |       |     |
+| Octupole        | octupole   | koct    |       |     |
+| Cavity          | rfcavity   | rfca    |       |     |
+
+#### Dipole (hardware - first part, program second part) 
+
+| Generic Attribute | MAD-X | elegant | TRACY | OPA | description                   |
+| ----------------- | ----- | ------- | ----- | --- | ----------------------------- |
+| length            | l     | l       |       |     | length                        |
+| angle             | angle | angle   |       |     | deflection angle              |
+| e1                | e1    | e1      |       |     | entrance angle                |
+| e2                | e2    | e2      |       |     | exit angle                    |
+| k1                | k1    | k1      |       |     | geometric quadrupole strength |
+
+#### Quadrupole
+
+| Generic Attribute | MAD-X | elegant | TRACY | OPA | description                   |
+| ----------------- | ----- | ------- | ----- | --- | ----------------------------- |
+| length            | l     | l       |       |     | length                        |
+| k1                | k1    | k1      |       |     | geometric quadrupole strength |
+
+
+#### Sextupole
+
+| Generic Attribute | MAD-X | elegant | TRACY | OPA | description                  |
+| ----------------- | ----- | ------- | ----- | --- | ---------------------------- |
+| length            | l     | l       |       |     | length                       |
+| k2                | k2    | k2      |       |     | geometric sextupole strength |
+
+
+#### Octupole
+
+| Generic Attribute | MAD-X | elegant | TRACY | OPA | description                 |
+| ----------------- | ----- | ------- | ----- | --- | --------------------------- |
+| length            | l     | l       |       |     | length                      |
+| k3                | k2    | k3      |       |     | geometric octupole strength |
 
 ## Naming Scheme
 
