@@ -90,3 +90,16 @@ description = """
 Fully symmetric Design Lattice of the BESSY II storage ring
 (Here as reference and to test stuff!)
 """
+
+[[lattices]]
+namespace = "bessy3"
+name = "bessy3_no-tg-in-unit-cell_v_notg-tgrb-b60-6bend-6sx"
+machine = "bessy3"
+title = "BESSY 3, NoTG in unitcell, 6MBA"
+authors = ["Bettina Kuske", "Johan Bengtsson"]
+energy = 2500
+simulations = ["apace", "elegant", "madx"]
+labels = []
+description = """
+BESSY 3 candidiate with no transverse gradient in unit cell, bend length 60 cmm, 6MBA
+"""
