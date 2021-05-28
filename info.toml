@@ -50,7 +50,7 @@ description = """
 """
 
 [[lattices]]
-namespace = "hzb"
+namespace = "bessy2"
 name = "bessy2_stduser-2019-05-07-v_1"
 machine = "bessy2"
 title = "BESSY II Standard User 2019"
@@ -64,7 +64,7 @@ Standard User lattice of the BESSY II storage ring
 """
 
 [[lattices]]
-namespace = "hzb"
+namespace = "bessy2"
 name = "bessy2_design-1996_v_1"
 machine = "bessy2"
 title = "BESSY II Design Lattice 1996"
