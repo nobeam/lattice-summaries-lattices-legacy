@@ -11,6 +11,7 @@ python = "^3.8"
 LatticeJSON = { path = "../../latticejson/", develop = true }
 tomlkit = "^0.7.0"
 doit = "^0.33.1"
+packaging = "^20.9"
 
 [tool.poetry.dev-dependencies]
 black = { version = "^20.8b1", allow-prereleases = true }

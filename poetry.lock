@@ -115,18 +115,23 @@ nearley = ["js2py"]
 regex = ["regex"]
 
 [[package]]
-name = "latticejson"
-version = "0.1.4"
+name = "LatticeJSON"
+version = "0.1.5"
 description = "A JSON based lattice file format"
 category = "main"
 optional = false
 python-versions = ">=3.6"
+develop = true
 
 [package.dependencies]
 click = ">=7.0"
 fastjsonschema = "*"
 lark-parser = "*"
 packaging = "*"
+
+[package.source]
+type = "directory"
+url = "../../latticejson"
 
 [[package]]
 name = "lazy-object-proxy"
@@ -162,7 +167,7 @@ python-versions = "*"
 
 [[package]]
 name = "packaging"
-version = "20.7"
+version = "20.9"
 description = "Core utilities for Python packages"
 category = "main"
 optional = false
@@ -269,7 +274,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "06e9011f307ab9de68fb2567d5a71b3b73ef13dd540ef1fdf66e9d965149a1c6"
+content-hash = "0163ffaf946a45b2aa9029743c10e7890a20db6036bb4709419a58212d5fae2e"
 
 [metadata.files]
 appdirs = [
@@ -311,10 +316,7 @@ lark-parser = [
     {file = "lark-parser-0.11.1.tar.gz", hash = "sha256:20bdefdf1b6e9bcb38165ea5cc4f27921a99c6f4c35264a3a953fd60335f1f8c"},
     {file = "lark_parser-0.11.1-py2.py3-none-any.whl", hash = "sha256:8b747e1f544dcc2789e3feaddd2a50c6a73bed69d62e9c69760c1e1f7d23495f"},
 ]
-latticejson = [
-    {file = "LatticeJSON-0.1.4-py3-none-any.whl", hash = "sha256:29bfe2fefa0a4070b42b0ac653950931a453bbd5360abf2944d7eb88323d969b"},
-    {file = "LatticeJSON-0.1.4.tar.gz", hash = "sha256:640e0df5adefd934e023a1ec77a0fb8366b87e9f8fcc09d38f6151c2f8b07c53"},
-]
+LatticeJSON = []
 lazy-object-proxy = [
     {file = "lazy-object-proxy-1.4.3.tar.gz", hash = "sha256:f3900e8a5de27447acbf900b4750b0ddfd7ec1ea7fbaf11dfa911141bc522af0"},
     {file = "lazy_object_proxy-1.4.3-cp27-cp27m-macosx_10_13_x86_64.whl", hash = "sha256:a2238e9d1bb71a56cd710611a1614d1194dc10a175c1e08d75e1a7bcc250d442"},
@@ -350,8 +352,8 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 packaging = [
-    {file = "packaging-20.7-py2.py3-none-any.whl", hash = "sha256:eb41423378682dadb7166144a4926e443093863024de508ca5c9737d6bc08376"},
-    {file = "packaging-20.7.tar.gz", hash = "sha256:05af3bb85d320377db281cf254ab050e1a7ebcbf5410685a9a407e18a1f81236"},
+    {file = "packaging-20.9-py2.py3-none-any.whl", hash = "sha256:67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a"},
+    {file = "packaging-20.9.tar.gz", hash = "sha256:5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"},
 ]
 pathspec = [
     {file = "pathspec-0.8.1-py2.py3-none-any.whl", hash = "sha256:aa0cb481c4041bf52ffa7b0d8fa6cd3e88a2ca4879c533c9153882ee2556790d"},
